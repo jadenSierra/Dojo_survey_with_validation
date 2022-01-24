@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="card bg-dark" style="width: 600px; margin: auto;" >
+        <h1 class="text-warning" id="title">Dojo Survey</h1>
+        <div class="card-body bg-dark" id="form-body">
+
+            <form action="/form" method="post">
+                <input type="hidden" name="id">
+                <label for="name" class="text-muted">Name:</label>
+                <input type="text" name="name" id="name">
+                {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+                <label for="d_location" class="text-muted">Dojo Location:</label>
+                <select name="d_location" id="d_location">
+                    <option value="Palo Alto">Palo Alto</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Washington">Washington</option>
+                    <option value="Online">Online</option>
+                </select>
+
+                <label for="language" class="text-muted">Favorite language:</label>
+                <select name="language" id="language">
+                    <option value="python">Python</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="java">Java</option>
+                    <option value="c#">C#</option>
+                </select>
+
+                <label for="comments">Comments:</label>
+                <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                <input class ="btn btn-warning" id="submit" type="submit" value="submit">
+                {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

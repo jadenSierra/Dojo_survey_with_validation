@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#title{
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#header-card{
+    padding:20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding:5px 20px
+}
+
+input, select, textarea {
+    border-radius: 10px;
+}
+
+#submit{
+    width: 25%;
+    margin:auto;
+    margin-top: 10px;
+}
+
+#home-container{
+    border-top: 1px solid gray;
+    padding: 10px 0px;
+}
+
+#home_link{
+    color:blue;
+}

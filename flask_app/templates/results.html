@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Results</title>
+</head>
+<body>
+    <div class="card bg-dark" id="header-card" style="width: 600px; margin: auto;"> 
+        <h1 class=" text-primary">{{dojo.name}}</h1>
+        <div class="bg-dark" id="body-card">
+            <p class="text-light"><strong>Dojo Location:</strong> {{dojo.d_location}}</p>
+            <p class="text-light"><strong>language:</strong> {{dojo.language}}</p>
+            <p class="text-light"><strong>Comments:</strong> {{dojo.comments}}</p>
+        </div>
+        <div id="home-container">
+            <a id="home_link" href="/">Home</a>
+        </div>
+    </div>
+</body>
+</html>
